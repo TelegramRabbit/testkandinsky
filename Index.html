@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <style>
+        #loader {
+            display: none; /* Изначально скрыт */
+            border: 8px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 8px solid blue;
+            width: 50px;
+            height: 50px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+
+<body>
+    <input id="token" type="hidden" value="B95FE0E981CC3AC6B6F4EFC0EE3C1C0D">
+    <input id="secret" type="hidden" value="FC8A5D8C7AE7431626C42E85FAB8D69A">    
+
+
+
+    <label for="query">Запрос</label><br>
+    <textarea id="query" rows="4" cols="50" style="width: 100%; height: 100px;">пушистый кот в очках</textarea><br>
+
+    <label for="negative">Негативный запрос</label><br>
+    <input id="negative" type="text" value="" style="width: 100%; height: 50px;"><br><br>
+
+
+    <label for="width">Ширина</label><br>
+    <input id="width" type="number" value="512" min="1" max="1024" step="1" style="width: 100%;"><br>
+    
+    <label for="height">Высота</label><br>
+    <input id="height" type="number" value="512" min="1" max="1024" step="1" style="width: 100%;"><br>
+    
+
+    <label for="style">Стиль</label><br>
+    <select id="style"></select><br><br>
+
+    <button onclick="generate()">Генирировать изоброжение</button><br><br>
+
+    <div id="loader"></div>
+
+    <img id="img" style="display: block;margin: 20px;">
+</body>
+
+</html>
